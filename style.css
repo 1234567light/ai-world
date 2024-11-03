@@ -1,0 +1,496 @@
+/* General reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1e2f, #282842);
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(34, 34, 34, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00ff7f;
+}
+
+.logo .highlight {
+    color: #00c4ff;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+.nav a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #00ff7f;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    color: #e0e0e0;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    margin-top: 5rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #00ff7f;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero .highlight {
+    color: #00c4ff;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #d4d4d4;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Subscribe Button */
+.subscribe-btn {
+    background-color: #00ff7f;
+    color: #1a1a1a;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 255, 127, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.5);
+}
+
+/* News Section */
+.news-section {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    margin: auto;
+    max-width: 1200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.news-article, .sidebar {
+    background-color: #333333;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.news-article:hover, .sidebar:hover {
+    transform: translateY(-5px);
+}
+
+.news-article h2 {
+    color: #00ff7f;
+}
+
+.news-img img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* Sidebar */
+.sidebar h3 {
+    color: #00c4ff;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+.sidebar li {
+    margin-bottom: 0.5rem;
+    color: #d4d4d4;
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(34, 34, 34, 0.8);
+    color: #e0e0e0;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.social-links a {
+    color: #e0e0e0;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00ff7f;
+}
+
+/* Mobile-specific styling */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333333;
+        padding: 1rem 0;
+        gap: 0.5rem;
+    }
+
+    .nav a {
+        padding: 0.5rem 1rem;
+        width: 100%;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Add this to the existing styles.css file */
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to page sections */
+.header {
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.hero h1, .hero p {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-image {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 1s;
+}
+
+.news-section {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    margin: auto;
+    max-width: 1200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: slideIn 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.news-article, .sidebar {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.7s;
+}
+
+/* Hover animations for buttons */
+.subscribe-btn {
+    background-color: #00ff7f;
+    color: #1a1a1a;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 255, 127, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.5);
+}
+
+.news-img img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+/* Enable smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+
+/* Contact Form Styles */
+#contact {
+    padding: 2rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact label {
+    text-align: left;
+    font-weight: bold;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+#contact .submit-btn {
+    background-color: #00ff7f;
+    color: #1a1a1a;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact .submit-btn:hover {
+    background-color: #00cc66;
+}
+
+
+
+
+
+
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    margin: 1rem 0;
+}
+
+.footer-links a {
+    color: #00ff7f;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social a {
+    color: #00ff7f;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #00cc66;
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links, .footer-social {
+        margin: 1rem 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
